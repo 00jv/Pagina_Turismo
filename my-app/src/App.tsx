@@ -20,7 +20,7 @@ function Copyright(props: any) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Desenvolvedor © '}
       <Link color="inherit" href="https://github.com/00jv">
-        João Victor Fagundes 
+        João Victor Fagundes de matos
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -30,41 +30,42 @@ function Copyright(props: any) {
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
+    title: 'Essencial',
+    price: '50,00',
     description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
+      'Suporte 24h',
+      'Serviços de quarto',
+      'Guia turístico',
     ],
-    buttonText: 'Sign up for free',
-    buttonVariant: 'outlined',
-  },
-  {
-    title: 'Pro',
-    subheader: 'Most popular',
-    price: '15',
-    description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
-    ],
-    buttonText: 'Get started',
+    buttonText: 'Comprar Agora',
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: 'Pro',
+    subheader: 'Mais Popular',
+    price: '70,00',
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+      'Suporte 24h',
+      'Serviços de quarto',
+      'Guia turístico',
+      'Roteiro de trilhas',
     ],
-    buttonText: 'Contact us',
-    buttonVariant: 'outlined',
+    buttonText: 'Comprar Agora',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Master',
+    price: '90,00',
+    description: [
+      'Suporte 24h',
+      'Serviços de quarto',
+      'Guia turístico',
+      'Roteiro de trilhas',
+      "Serviço personalizado",
+      "Área Vip",
+    ],
+    buttonText: 'Comprar Agora',
+    buttonVariant: 'contained',
   },
 ];
 const footers = [
@@ -94,46 +95,46 @@ const footers = [
 
 function App() {
   return (
+
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
       <CssBaseline />
       <AppBar
         position="static"
-        color="default"
         elevation={0}
-        sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+        sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}`, backgroundColor: "#122A57" }}
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1, fontWeight: 'bold' }}>
             FlexTurismo
           </Typography>
           <nav>
             <Link
               variant="button"
-              color="text.primary"
+
               href="#"
-              sx={{ my: 1, mx: 1.5 }}
+              sx={{ my: 1, mx: 1.5, fontWeight: 'bold', color: 'white', textDecoration: 'none' }}
             >
-              Features
+              Quem Somos
             </Link>
             <Link
               variant="button"
-              color="text.primary"
+
               href="#"
-              sx={{ my: 1, mx: 1.5 }}
+              sx={{ my: 1, mx: 1.5, fontWeight: 'bold', color: 'white', textDecoration: 'none' }}
             >
-              Enterprise
+              Serviços
             </Link>
             <Link
               variant="button"
-              color="text.primary"
+
               href="#"
-              sx={{ my: 1, mx: 1.5 }}
+              sx={{ my: 1, mx: 1.5, fontWeight: 'bold', color: 'white', textDecoration: 'none' }}
             >
-              Support
+              Planos
             </Link>
           </nav>
-          <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+          <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5, color: 'white' }}>
             Login
           </Button>
         </Toolbar>
@@ -146,13 +147,12 @@ function App() {
           align="center"
           color="text.primary"
           gutterBottom
+          sx={{ fontWeight: 'bold', color: "#122A57" }}
         >
-          Pricing
+          FlexTurismo
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary" component="p">
-          Quickly build an effective pricing table for your potential customers with
-          this layout. It&apos;s built with default MUI components with little
-          customization.
+          O melhor Serviço Para você
         </Typography>
       </Container>
       {/* End hero unit */}
@@ -193,11 +193,11 @@ function App() {
                     }}
                   >
                     <Typography component="h2" variant="h3" color="text.primary">
-                      ${tier.price}
+                      R$ {tier.price}
                     </Typography>
-                    <Typography variant="h6" color="text.secondary">
+                    {/* <Typography variant="h6" color="text.secondary">
                       /mo
-                    </Typography>
+                    </Typography> */}
                   </Box>
                   <ul>
                     {tier.description.map((line) => (
@@ -227,12 +227,14 @@ function App() {
       </Container>
       {/* Footer */}
       <Container
-        maxWidth="md"
         component="footer"
+
         sx={{
           borderTop: (theme) => `1px solid ${theme.palette.divider}`,
           mt: 8,
           py: [3, 6],
+          width: '100%',
+          position: 'static'
         }}
       >
         <Grid container spacing={4} justifyContent="space-evenly">
@@ -253,7 +255,9 @@ function App() {
             </Grid>
           ))}
         </Grid>
+
         <Copyright sx={{ mt: 5 }} />
+
       </Container>
       {/* End footer */}
     </React.Fragment>
